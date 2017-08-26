@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<bean id="orwell" class="hu.javadev.bookstore.model.Author">
-		<constructor-arg value="George Orwell" />
-	</bean>
+	<bean id="orwell" class="hu.javadev.bookstore.model.Author"
+		c:name="George Orwell" />
 
-	<bean id="herriot" class="hu.javadev.bookstore.model.Author">
-		<constructor-arg value="James Herriot" />
-	</bean>
+	<bean id="herriot" class="hu.javadev.bookstore.model.Author"
+		c:name="James Herriot" />
 
-	<bean id="publisher" class="hu.javadev.bookstore.model.Publisher">
-		<property name="name" value="Könyvfakasztó" />
-		<property name="description" value="Részletes leírás" />
-	</bean>
+	<bean id="publisher" class="hu.javadev.bookstore.model.Publisher"
+		p:name="Könyvfakasztó" p:description="Részletes leírás" />
 
 	<bean id="1984" class="hu.javadev.bookstore.model.Book" autowire="byName">
 		<constructor-arg type="java.util.List">
