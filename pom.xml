@@ -15,6 +15,7 @@
 		<!-- Spring -->
 		<spring.version>4.3.6.RELEASE</spring.version>
 		<spring-bom.version>4.3.6.RELEASE</spring-bom.version>
+		<spring-security.version>4.2.1.RELEASE</spring-security.version>
 
 		<!-- Web -->
 		<servlet.version>3.0.1</servlet.version>
@@ -33,6 +34,14 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-bom</artifactId>
+				<version>${spring-security.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -48,6 +57,21 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
 		</dependency>
 
 		<!-- Spring MVC -->
