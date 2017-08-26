@@ -11,6 +11,9 @@ public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BookStoreConfig.class);
 
+        BookStore bookStore = context.getBean(BookStore.class);
+        System.out.println(bookStore);
+
         BookService bookService = context.getBean(BookService.class);
         System.out.println(bookService.getBooks());
 
