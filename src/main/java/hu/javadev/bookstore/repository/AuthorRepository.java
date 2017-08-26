@@ -6,6 +6,8 @@ import hu.javadev.bookstore.model.Author;
 
 public interface AuthorRepository {
 
-    public List<Author> getAuthors();
+    List<Author> getAuthors();
+
+    Author findById(long id);
 
 }

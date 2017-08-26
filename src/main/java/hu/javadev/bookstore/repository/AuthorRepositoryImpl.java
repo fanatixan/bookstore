@@ -16,4 +16,15 @@ public class AuthorRepositoryImpl implements AuthorRepository {
         return authors;
     }
 
+    @Override
+    public Author findById(long id) {
+        for (Author author : authors) {
+            if (author.getId() == id) {
+                return author;
+            }
+        }
+
+        return null;
+    }
+
 }

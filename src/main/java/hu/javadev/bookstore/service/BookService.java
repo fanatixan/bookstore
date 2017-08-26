@@ -17,5 +17,9 @@ public class BookService {
     public List<Book> getBooks() {
         return bookRepository.getBooks();
     }
-    
+
+    public void addBook(Book book) {
+        bookRepository.save(book);
+    }
+
 }

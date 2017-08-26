@@ -12,6 +12,10 @@ public enum Genre {
         this.name = name;
     }
 
+    public String getCode() {
+        return code;
+    }
+
     @Override
     public String toString() {
         return name;
