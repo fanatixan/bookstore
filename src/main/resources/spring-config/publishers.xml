@@ -5,6 +5,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	<bean id="publisher" class="hu.javadev.bookstore.model.Publisher"
-		p:name="Könyvfakasztó" p:description="Részletes leírás" />
+		init-method="init" p:name="Könyvfakasztó" p:description="Részletes leírás" />
 
 </beans>

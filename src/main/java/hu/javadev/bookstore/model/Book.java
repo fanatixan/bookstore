@@ -1,9 +1,14 @@
 package hu.javadev.bookstore.model;
 
+import java.util.Date;
 import java.util.List;
 
-public class Book {
+import org.springframework.beans.factory.InitializingBean;
 
+public class Book implements HasId, InitializingBean {
+
+    private long id;
+    private Date createdAt;
     private String title;
     private List<Author> authors;
     private Publisher publisher;
@@ -11,6 +16,21 @@ public class Book {
     public Book(String title, List<Author> authors) {
         this.title = title;
         this.authors = authors;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        createdAt = new Date();
+    }
+
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Publisher getPublisher() {
@@ -31,7 +51,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book [title=" + title + ", authors=" + authors + ", publisher=" + publisher + "]";
+        return "Book [id=" + id + ", createdAt=" + createdAt + ", title=" + title + ", authors=" + authors + ", publisher=" + publisher + "]";
     }
 
 }

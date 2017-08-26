@@ -1,9 +1,27 @@
 package hu.javadev.bookstore.model;
 
-public class Publisher {
+import java.util.Date;
 
+public class Publisher implements HasId {
+
+    private long id;
+    private Date createdAt;
     private String name;
     private String description;
+
+    void init() {
+        createdAt = new Date();
+    }
+
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -23,7 +41,7 @@ public class Publisher {
 
     @Override
     public String toString() {
-        return "Publisher [name=" + name + ", description=" + description + "]";
+        return "Publisher [id=" + id + ", createdAt=" + createdAt + ", name=" + name + ", description=" + description + "]";
     }
 
 }
