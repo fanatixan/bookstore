@@ -16,4 +16,22 @@
 		<property name="description" value="Részletes leírás" />
 	</bean>
 
+	<bean id="1984" class="hu.javadev.bookstore.model.Book" autowire="byName">
+		<constructor-arg type="java.util.List">
+			<list>
+				<ref bean="orwell" />
+			</list>
+		</constructor-arg>
+		<constructor-arg type="java.lang.String" value="1984" />
+	</bean>
+
+	<bean id="apk" class="hu.javadev.bookstore.model.Book" autowire="byName">
+		<constructor-arg type="java.util.List">
+			<list>
+				<ref bean="herriot" />
+			</list>
+		</constructor-arg>
+		<constructor-arg type="java.lang.String" value="Állatorvosi pályám kezdetén" />
+	</bean>
+
 </beans>
