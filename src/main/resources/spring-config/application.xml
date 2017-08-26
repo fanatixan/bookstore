@@ -11,4 +11,9 @@
 		<constructor-arg value="James Herriot" />
 	</bean>
 
+	<bean id="publisher" class="hu.javadev.bookstore.model.Publisher">
+		<property name="name" value="Könyvfakasztó" />
+		<property name="description" value="Részletes leírás" />
+	</bean>
+
 </beans>
