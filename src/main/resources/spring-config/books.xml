@@ -11,6 +11,7 @@
 			</list>
 		</constructor-arg>
 		<constructor-arg type="java.lang.String" value="1984" />
+		<constructor-arg type="hu.javadev.bookstore.model.Genre" value="UTO" />
 	</bean>
 
 	<bean id="apk" class="hu.javadev.bookstore.model.Book" autowire="byName">
@@ -20,6 +21,7 @@
 			</list>
 		</constructor-arg>
 		<constructor-arg type="java.lang.String" value="Állatorvosi pályám kezdetén" />
+		<constructor-arg type="hu.javadev.bookstore.model.Genre" value="BIO" />
 	</bean>
 
 </beans>

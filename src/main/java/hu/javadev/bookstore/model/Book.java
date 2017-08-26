@@ -10,11 +10,13 @@ public class Book implements HasId, InitializingBean {
     private long id;
     private Date createdAt;
     private String title;
+    private Genre genre;
     private List<Author> authors;
     private Publisher publisher;
 
-    public Book(String title, List<Author> authors) {
+    public Book(String title, Genre genre, List<Author> authors) {
         this.title = title;
+        this.genre = genre;
         this.authors = authors;
     }
 
@@ -51,7 +53,8 @@ public class Book implements HasId, InitializingBean {
 
     @Override
     public String toString() {
-        return "Book [id=" + id + ", createdAt=" + createdAt + ", title=" + title + ", authors=" + authors + ", publisher=" + publisher + "]";
+        return "Book [id=" + id + ", createdAt=" + createdAt + ", title=" + title + ", genre=" + genre + ", authors=" + authors + ", publisher=" + publisher
+                + "]";
     }
 
 }

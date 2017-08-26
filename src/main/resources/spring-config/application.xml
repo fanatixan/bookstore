@@ -8,4 +8,13 @@
 	<import resource="classpath:/spring-config/publishers.xml" />
 	<import resource="classpath:/spring-config/books.xml" />
 
+	<bean id="customEditorConfigurer"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="hu.javadev.bookstore.model.Genre" value="hu.javadev.bookstore.editor.GenreEditor" />
+			</map>
+		</property>
+	</bean>
+
 </beans>
