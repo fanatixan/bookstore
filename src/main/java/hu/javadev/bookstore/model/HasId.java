@@ -2,8 +2,8 @@ package hu.javadev.bookstore.model;
 
 public interface HasId {
 
-    void setId(long id);
+    void setId(Long id);
 
-    long getId();
+    Long getId();
 
 }

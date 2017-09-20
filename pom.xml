@@ -17,6 +17,7 @@
 		<spring.version>4.3.6.RELEASE</spring.version>
 		<spring-bom.version>4.3.6.RELEASE</spring-bom.version>
 		<spring-security.version>4.2.1.RELEASE</spring-security.version>
+		<spring-data.version>1.11.0.RELEASE</spring-data.version>
 
 		<!-- Web -->
 		<servlet.version>3.0.1</servlet.version>
@@ -24,6 +25,12 @@
 
 		<!-- Validation -->
 		<validation.version>5.1.1.Final</validation.version>
+
+		<!-- Hibernate / JPA -->
+		<hibernate.version>4.2.1.Final</hibernate.version>
+
+		<!-- DataBase -->
+		<database.version>2.3.3</database.version>
 	</properties>
 
 	<dependencyManagement>
@@ -49,6 +56,13 @@
 
 	<dependencies>
 
+		<!-- DataBase -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${database.version}</version>
+		</dependency>
+
 		<!-- Spring dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -73,6 +87,12 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring-data.version}</version>
 		</dependency>
 
 		<!-- Spring MVC -->
@@ -104,6 +124,18 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.0</version>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${validation.version}</version>
 		</dependency>
 
 	</dependencies>

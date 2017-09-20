@@ -6,9 +6,7 @@
 
 	<context:component-scan base-package="hu.javadev.bookstore" />
 
-	<import resource="classpath:/spring-config/authors.xml" />
-	<import resource="classpath:/spring-config/publishers.xml" />
-	<import resource="classpath:/spring-config/books.xml" />
+	<import resource="classpath:/spring-config/db.xml" />
 
 	<bean id="customEditorConfigurer"
 		class="org.springframework.beans.factory.config.CustomEditorConfigurer">

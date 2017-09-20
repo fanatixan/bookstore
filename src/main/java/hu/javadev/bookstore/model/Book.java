@@ -3,16 +3,48 @@ package hu.javadev.bookstore.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import org.springframework.beans.factory.InitializingBean;
 
+@Entity
+@Table(name = "book")
 public class Book implements HasId, InitializingBean {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     private Long id;
+
+    @Transient
     private Date createdAt;
+
+    @Column(name = "title")
     private String title;
+
+    @Transient
     private Genre genre;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
     private List<Author> authors;
+
+    @ManyToOne
+    @JoinColumn(name = "publisher_id")
     private Publisher publisher;
+
+    Book() {
+    }
 
     public Book(String title, Genre genre, List<Author> authors) {
         this.title = title;
@@ -26,7 +58,7 @@ public class Book implements HasId, InitializingBean {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -35,7 +67,7 @@ public class Book implements HasId, InitializingBean {
     }
 
     @Override
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

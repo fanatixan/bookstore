@@ -2,24 +2,47 @@ package hu.javadev.bookstore.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "publisher")
 public class Publisher implements HasId {
 
-    private long id;
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
+
+    @Transient
     private Date createdAt;
+
+    @Column(name = "name")
     private String name;
+
+    @Lob
+    @Column(name = "description")
     private String description;
+
+    public Publisher() {
+    }
 
     void init() {
         createdAt = new Date();
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
