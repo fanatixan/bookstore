@@ -13,8 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            //.csrf().disable()
-            //.and()
+            .csrf().disable()
             .formLogin() //
                 .loginPage("/login") //
                 .loginProcessingUrl("/spring_security_check") //

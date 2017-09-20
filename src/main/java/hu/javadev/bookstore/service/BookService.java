@@ -1,6 +1,7 @@
 package hu.javadev.bookstore.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class BookService {
 
     public void addBook(Book book) {
         bookRepository.save(book);
+    }
+
+    public List<Book> search(String phrase) {
+        return getBooks().stream().filter(b -> b.getTitle().contains(phrase)).collect(Collectors.toList());
     }
 
 }

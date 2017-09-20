@@ -7,7 +7,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class Book implements HasId, InitializingBean {
 
-    private long id;
+    private Long id;
     private Date createdAt;
     private String title;
     private Genre genre;
@@ -30,6 +30,10 @@ public class Book implements HasId, InitializingBean {
         return id;
     }
 
+    public boolean hasId() {
+        return id != null;
+    }
+
     @Override
     public void setId(long id) {
         this.id = id;
@@ -49,6 +53,10 @@ public class Book implements HasId, InitializingBean {
 
     public List<Author> getAuthors() {
         return authors;
+    }
+
+    public Genre getGenre() {
+        return genre;
     }
 
     @Override
